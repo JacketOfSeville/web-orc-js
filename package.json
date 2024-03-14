@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "dotenv": "^16.4.5",
+    "http": "^0.0.1-security",
+    "jquery": "^3.7.1",
+    "mariadb": "^3.2.3"
+  }
+}
