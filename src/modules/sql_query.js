@@ -11,8 +11,7 @@ const pool = mariadb.createPool({
 });
 
 
-
-async function query(select,from,where) {
+async function query(select,from,where,order) {
     let conn;
     try {
         conn = await pool.getConnection();
@@ -23,7 +22,9 @@ async function query(select,from,where) {
             FROM 
                 ${from} 
             WHERE 
-                ${where}`);
+                ${where}
+            ORDER BY
+                ${order}`);
         console.log(result); 
     } catch (err) {
         throw err;
@@ -34,5 +35,5 @@ async function query(select,from,where) {
     }
 }
 
-query('*','engenharia_orcamento','id = 14');
+query('*','engenharia_orcamento','id is not null','numero desc');
 
